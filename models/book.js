@@ -7,20 +7,19 @@ const bookSchema = new mongoose.Schema({
     required: true
   },
   // url string for thumbnail image
-  thumbnail: {
+  author: {
     type: String,
     default: ""
   },
   // url for recipe web page - unique index
-  href: {
+  description: {
     type: String,
-    default: "",
-    unique: true
+    default: ""
   },
 
   // Not all ingredients, just the recommended ingredients from scraped web pages
   // from which seed data was sourced
-  ingredients: [String]
+  rating: [String]
 });
 
 const Book = mongoose.model("Book", bookSchema);
